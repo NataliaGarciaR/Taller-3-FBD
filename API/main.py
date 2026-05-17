@@ -18,7 +18,12 @@ app.add_middleware(
 # TODO: conectarse al cluster Admonsis  
 # client = MongoClient("mongodb://<usuario>:<contraseña>@157.253.236.88:8087")
 
-client = MongoClient(os.environ["MONGO_URI"])
+client = MongoClient(
+    os.environ["MONGO_URI"],
+    tls=True,
+    tlsAllowInvalidCertificates=True
+)
+
 db = client["parranderos_nosql"]
 
 
