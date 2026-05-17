@@ -4,6 +4,7 @@ from pymongo import MongoClient
 from datetime import datetime
 import os
 
+
 app = FastAPI()
 
 app.add_middleware(
